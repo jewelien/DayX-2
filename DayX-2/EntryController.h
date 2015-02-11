@@ -19,7 +19,13 @@
 -(void)removeEntry:(Entry *)entry;
 -(void)replaceEntry:(NSDictionary *)oldEntry withEntry:(NSDictionary *)newEntry;
 
-+ (NSMutableArray *)loadEntriesFromDefaults;
-+ (void)storeEntriesInDefaults:(NSArray *)entries;
+
+- (void)loadFromDefaults;
+- (void)synchronize;
+
+//+ (NSMutableArray *)loadFromDefaults;
+//+ (void)storeEntriesInDefaults:(NSArray *)entries;
+
+
 
 @end
