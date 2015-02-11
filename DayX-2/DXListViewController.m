@@ -10,7 +10,7 @@
 #import "DXListTableViewDataSource.h"
 #import "DXDetailViewController.h"
 
-@interface DXListViewController ()
+@interface DXListViewController () <UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) DXListTableViewDataSource *dataSource;
@@ -26,6 +26,7 @@
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
     self.dataSource = [DXListTableViewDataSource new];
     self.tableView.dataSource = self.dataSource;
+    self.tableView.delegate = self;
     [self.dataSource registerTableView:self.tableView];
     [self.view addSubview:self.tableView];
     
@@ -43,6 +44,10 @@
 -(void)addNewEntry {
     DXDetailViewController *dvc = [DXDetailViewController new];
     [self.navigationController pushViewController:dvc animated:YES];
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 
