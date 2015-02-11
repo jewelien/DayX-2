@@ -7,12 +7,14 @@
 //
 
 #import "DXDetailViewController.h"
+#import "Entry.h"
 
 @interface DXDetailViewController ()
 
 @property (nonatomic, strong) UITextField *textField;
 @property (nonatomic, strong) UITextView *textView;
 @property (nonatomic, strong) UIButton *clearButton;
+@property (nonatomic, strong) Entry *entry;
 
 @end
 
@@ -54,7 +56,19 @@
 }
 
 -(void)saveButtonAction {
+    if (self.entry == nil) {
+        self.entry = [[Entry alloc] init];
+        self.entry.title = self.textField.text;
+        self.entry.text = self.textView.text;
+    }
+    
+    NSMutableArray *entries = [Entry loadEntriesFromDefaults];
+    [entries addObject:self.entry];
+    
+    [Entry storeEntriesInDefaults:entries];
+    
     [self.navigationController popViewControllerAnimated:YES];
+    
 }
 
 /*
