@@ -18,6 +18,7 @@
 		FCBDA4C51A8B0C1700E8D489 /* DXDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCBDA4C31A8B0C1700E8D489 /* DXDetailViewController.m */; };
 		FCBDA4C61A8B0C1700E8D489 /* DXDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCBDA4C41A8B0C1700E8D489 /* DXDetailViewController.xib */; };
 		FCBDA4C91A8B158300E8D489 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = FCBDA4C81A8B158300E8D489 /* Entry.m */; };
+		FCBDA5681A8BFC1000E8D489 /* EntryController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCBDA5671A8BFC1000E8D489 /* EntryController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		FCBDA4C41A8B0C1700E8D489 /* DXDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DXDetailViewController.xib; sourceTree = "<group>"; };
 		FCBDA4C71A8B158300E8D489 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
 		FCBDA4C81A8B158300E8D489 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
+		FCBDA5661A8BFC1000E8D489 /* EntryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryController.h; sourceTree = "<group>"; };
+		FCBDA5671A8BFC1000E8D489 /* EntryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +105,8 @@
 				FCBDA4C31A8B0C1700E8D489 /* DXDetailViewController.m */,
 				FCBDA4C71A8B158300E8D489 /* Entry.h */,
 				FCBDA4C81A8B158300E8D489 /* Entry.m */,
+				FCBDA5661A8BFC1000E8D489 /* EntryController.h */,
+				FCBDA5671A8BFC1000E8D489 /* EntryController.m */,
 				FCBDA4C41A8B0C1700E8D489 /* DXDetailViewController.xib */,
 				FCBDA49D1A8B06CD00E8D489 /* Main.storyboard */,
 				FCBDA4A01A8B06CD00E8D489 /* Images.xcassets */,
@@ -242,6 +247,7 @@
 				FCBDA4C51A8B0C1700E8D489 /* DXDetailViewController.m in Sources */,
 				FCBDA4BE1A8B088F00E8D489 /* DXListTableViewDataSource.m in Sources */,
 				FCBDA4BB1A8B077300E8D489 /* DXListViewController.m in Sources */,
+				FCBDA5681A8BFC1000E8D489 /* EntryController.m in Sources */,
 				FCBDA4991A8B06CD00E8D489 /* DXAppDelegate.m in Sources */,
 				FCBDA4961A8B06CD00E8D489 /* main.m in Sources */,
 			);

@@ -9,12 +9,14 @@
 #import "DXDetailViewController.h"
 #import "Entry.h"
 
+
 @interface DXDetailViewController ()
 
 @property (nonatomic, strong) UITextField *textField;
 @property (nonatomic, strong) UITextView *textView;
 @property (nonatomic, strong) UIButton *clearButton;
 @property (nonatomic, strong) Entry *entry;
+
 
 @end
 
@@ -42,8 +44,10 @@
     
     UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(saveButtonAction)];
     self.navigationItem.rightBarButtonItem = saveButton;
+    
+    
+    
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -60,8 +64,8 @@
         self.entry = [[Entry alloc] init];
         self.entry.title = self.textField.text;
         self.entry.text = self.textView.text;
+        
     }
-    
     NSMutableArray *entries = [Entry loadEntriesFromDefaults];
     [entries addObject:self.entry];
     
@@ -69,6 +73,11 @@
     
     [self.navigationController popViewControllerAnimated:YES];
     
+}
+
+-(void)updateWithDictionary:(NSDictionary *) dictionary {
+    self.textField.text = dictionary[titleKey];
+    self.textView.text = dictionary[textKey];
 }
 
 /*

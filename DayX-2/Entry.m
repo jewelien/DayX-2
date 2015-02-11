@@ -8,17 +8,18 @@
 
 #import "Entry.h"
 
-static NSString * const titleKey = @"title";
-static NSString * const textKey = @"text";
-static NSString * const timeStampKey = @"timeStamp";
 static NSString * const entriesKey = @"entries";
+
 
 @implementation Entry
 
+//takes entry its called on and return dictionary. gives values and keys instead of objects.
+//CONVERT ENTRY OBJECT TO DICTIONARY (format).
 -(NSDictionary *)entryDictionary {
     NSMutableDictionary *entryDictionary = [NSMutableDictionary new];
     if (self.title) {
         [entryDictionary setObject:self.title forKey:titleKey];
+        //equvalent to "entryDictionary[titleKey] = self.title"
     }
     if (self.text) {
         [entryDictionary setObject:self.text forKey:textKey];
@@ -40,6 +41,8 @@ static NSString * const entriesKey = @"entries";
     return self;
 }
 
+
+//FROM DICTIONARY TO ARRAYS
 + (NSMutableArray *)loadEntriesFromDefaults {
     NSArray *entryDictionaries= [[NSUserDefaults standardUserDefaults] objectForKey:entriesKey];
     NSMutableArray *entries = [NSMutableArray new];
@@ -50,8 +53,17 @@ static NSString * const entriesKey = @"entries";
     return entries;
 }
 
+//entryDictionary converts to dictionary.. RETRIVING ARRAY TO DICTIONARY.
+//given entries how to turn it into dictionary.
 + (void)storeEntriesInDefaults:(NSArray *)entries {
-    
+    NSMutableArray *entryDictionaries = [NSMutableArray new];
+    for (Entry *entry in entries) {
+        //another way to write this:
+        //NSDictionary *entryDictionary = [entry entryDictionary]
+        //[entryDictionaries addObject:entryDictionary]
+        [entryDictionaries addObject:[entry entryDictionary]];
+    }
+    [[NSUserDefaults standardUserDefaults] setObject:entryDictionaries forKey:entriesKey];
 }
 
 
