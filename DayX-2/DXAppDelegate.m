@@ -6,18 +6,23 @@
 //  Copyright (c) 2015 Julien Guanzon. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "DXAppDelegate.h"
+#import "DXListViewController.h"
 
-@interface AppDelegate ()
+@interface DXAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation DXAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[DXListViewController new]];
+    
     return YES;
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  DXDetailViewController.h
 //  DayX-2
 //
 //  Created by Julien Guanzon on 2/10/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface DXDetailViewController : UIViewController
 
 @end
-
