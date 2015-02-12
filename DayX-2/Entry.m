@@ -42,30 +42,5 @@ static NSString * const entriesKey = @"entries";
 }
 
 
-//FROM DICTIONARY TO ARRAYS
-+ (NSMutableArray *)loadEntriesFromDefaults {
-    NSArray *entryDictionaries= [[NSUserDefaults standardUserDefaults] objectForKey:entriesKey];
-    NSMutableArray *entries = [NSMutableArray new];
-    for (NSDictionary *entryDictionary in entryDictionaries) {
-        Entry *entry = [[Entry alloc] initWithDictionary:entryDictionary];
-        [entries addObject:entry];
-    }
-    return entries;
-}
-
-//entryDictionary converts to dictionary.. RETRIVING ARRAY TO DICTIONARY.
-//given entries how to turn it into dictionary.
-+ (void)storeEntriesInDefaults:(NSArray *)entries {
-    NSMutableArray *entryDictionaries = [NSMutableArray new];
-    for (Entry *entry in entries) {
-        //another way to write this:
-        //NSDictionary *entryDictionary = [entry entryDictionary]
-        //[entryDictionaries addObject:entryDictionary]
-        [entryDictionaries addObject:[entry entryDictionary]];
-    }
-    [[NSUserDefaults standardUserDefaults] setObject:entryDictionaries forKey:entriesKey];
-}
-
-
 
 @end

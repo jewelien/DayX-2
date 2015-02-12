@@ -23,9 +23,4 @@
 - (void)loadFromDefaults;
 - (void)synchronize;
 
-//+ (NSMutableArray *)loadFromDefaults;
-//+ (void)storeEntriesInDefaults:(NSArray *)entries;
-
-
-
 @end

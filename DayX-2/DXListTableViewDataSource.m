@@ -7,27 +7,25 @@
 //
 
 #import "DXListTableViewDataSource.h"
-#import "Entry.h"
+#import "EntryController.h"
 
 @implementation DXListTableViewDataSource
 
 
 -(void)registerTableView:(UITableView *)tableView {
-    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+//    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
 //from solution branch???
-//    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass([UITableViewCell class])];
+    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass([UITableViewCell class])];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [Entry loadEntriesFromDefaults].count;
+    return [EntryController sharedInstance].entries.count;
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSArray *entries = [Entry loadEntriesFromDefaults];
-    Entry *entry = entries[indexPath.row];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-//??UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class])];
+    Entry *entry = [EntryController sharedInstance].entries[indexPath.row];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class])];
     cell.textLabel.text = entry.title;
     return cell;
 }

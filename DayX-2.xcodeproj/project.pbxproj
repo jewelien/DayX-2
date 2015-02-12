@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC6352031A8D58BB00041C1C /* PageViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6352021A8D58BB00041C1C /* PageViewDataSource.m */; };
 		FCBDA4961A8B06CD00E8D489 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FCBDA4951A8B06CD00E8D489 /* main.m */; };
 		FCBDA4991A8B06CD00E8D489 /* DXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FCBDA4981A8B06CD00E8D489 /* DXAppDelegate.m */; };
 		FCBDA49F1A8B06CD00E8D489 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCBDA49D1A8B06CD00E8D489 /* Main.storyboard */; };
@@ -16,7 +17,6 @@
 		FCBDA4BB1A8B077300E8D489 /* DXListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCBDA4BA1A8B077300E8D489 /* DXListViewController.m */; };
 		FCBDA4BE1A8B088F00E8D489 /* DXListTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = FCBDA4BD1A8B088F00E8D489 /* DXListTableViewDataSource.m */; };
 		FCBDA4C51A8B0C1700E8D489 /* DXDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCBDA4C31A8B0C1700E8D489 /* DXDetailViewController.m */; };
-		FCBDA4C61A8B0C1700E8D489 /* DXDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCBDA4C41A8B0C1700E8D489 /* DXDetailViewController.xib */; };
 		FCBDA4C91A8B158300E8D489 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = FCBDA4C81A8B158300E8D489 /* Entry.m */; };
 		FCBDA5681A8BFC1000E8D489 /* EntryController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCBDA5671A8BFC1000E8D489 /* EntryController.m */; };
 /* End PBXBuildFile section */
@@ -32,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FC6352011A8D58BB00041C1C /* PageViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewDataSource.h; sourceTree = "<group>"; };
+		FC6352021A8D58BB00041C1C /* PageViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewDataSource.m; sourceTree = "<group>"; };
 		FCBDA4901A8B06CD00E8D489 /* DayX-2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DayX-2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCBDA4941A8B06CD00E8D489 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCBDA4951A8B06CD00E8D489 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -49,7 +51,6 @@
 		FCBDA4BD1A8B088F00E8D489 /* DXListTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXListTableViewDataSource.m; sourceTree = "<group>"; };
 		FCBDA4C21A8B0C1700E8D489 /* DXDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXDetailViewController.h; sourceTree = "<group>"; };
 		FCBDA4C31A8B0C1700E8D489 /* DXDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXDetailViewController.m; sourceTree = "<group>"; };
-		FCBDA4C41A8B0C1700E8D489 /* DXDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DXDetailViewController.xib; sourceTree = "<group>"; };
 		FCBDA4C71A8B158300E8D489 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
 		FCBDA4C81A8B158300E8D489 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
 		FCBDA5661A8BFC1000E8D489 /* EntryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryController.h; sourceTree = "<group>"; };
@@ -103,11 +104,12 @@
 				FCBDA4BD1A8B088F00E8D489 /* DXListTableViewDataSource.m */,
 				FCBDA4C21A8B0C1700E8D489 /* DXDetailViewController.h */,
 				FCBDA4C31A8B0C1700E8D489 /* DXDetailViewController.m */,
+				FC6352011A8D58BB00041C1C /* PageViewDataSource.h */,
+				FC6352021A8D58BB00041C1C /* PageViewDataSource.m */,
 				FCBDA4C71A8B158300E8D489 /* Entry.h */,
 				FCBDA4C81A8B158300E8D489 /* Entry.m */,
 				FCBDA5661A8BFC1000E8D489 /* EntryController.h */,
 				FCBDA5671A8BFC1000E8D489 /* EntryController.m */,
-				FCBDA4C41A8B0C1700E8D489 /* DXDetailViewController.xib */,
 				FCBDA49D1A8B06CD00E8D489 /* Main.storyboard */,
 				FCBDA4A01A8B06CD00E8D489 /* Images.xcassets */,
 				FCBDA4A21A8B06CD00E8D489 /* LaunchScreen.xib */,
@@ -223,7 +225,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCBDA49F1A8B06CD00E8D489 /* Main.storyboard in Resources */,
-				FCBDA4C61A8B0C1700E8D489 /* DXDetailViewController.xib in Resources */,
 				FCBDA4A41A8B06CD00E8D489 /* LaunchScreen.xib in Resources */,
 				FCBDA4A11A8B06CD00E8D489 /* Images.xcassets in Resources */,
 			);
@@ -245,6 +246,7 @@
 			files = (
 				FCBDA4C91A8B158300E8D489 /* Entry.m in Sources */,
 				FCBDA4C51A8B0C1700E8D489 /* DXDetailViewController.m in Sources */,
+				FC6352031A8D58BB00041C1C /* PageViewDataSource.m in Sources */,
 				FCBDA4BE1A8B088F00E8D489 /* DXListTableViewDataSource.m in Sources */,
 				FCBDA4BB1A8B077300E8D489 /* DXListViewController.m in Sources */,
 				FCBDA5681A8BFC1000E8D489 /* EntryController.m in Sources */,

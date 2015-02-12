@@ -7,7 +7,7 @@
 //
 
 #import "DXDetailViewController.h"
-#import "Entry.h"
+#import "EntryController.h"
 
 
 @interface DXDetailViewController ()
@@ -30,10 +30,12 @@
     self.textField = [[UITextField alloc] initWithFrame:CGRectMake(30, 100, 200, 40)];
 //    self.textField.backgroundColor = [UIColor grayColor];
     [self.view addSubview:self.textField];
+    self.textField.text = self.entry.title;
     self.textField.placeholder = @"Title/Subject";
     
     self.textView = [[UITextView alloc] initWithFrame:CGRectMake(40, 150, 300, 400)];
     self.textView.backgroundColor = [UIColor grayColor];
+    self.textView.text = self.entry.text;
     [self.view addSubview:self.textView];
     
     self.clearButton = [[UIButton alloc] initWithFrame:CGRectMake(250, 100, 75, 30)];
@@ -42,7 +44,7 @@
     [self.view addSubview:self.clearButton];
     [self.clearButton addTarget:self action:@selector(clearButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     
-    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(saveButtonAction)];
+    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(saveButtonAction:)];
     self.navigationItem.rightBarButtonItem = saveButton;
     
     
@@ -59,17 +61,15 @@
     self.textView.text = @"";
 }
 
--(void)saveButtonAction {
-    if (self.entry == nil) {
-        self.entry = [[Entry alloc] init];
-        self.entry.title = self.textField.text;
-        self.entry.text = self.textView.text;
-        
-    }
-    NSMutableArray *entries = [Entry loadEntriesFromDefaults];
-    [entries addObject:self.entry];
+-(void)saveButtonAction:(id)sender {
     
-    [Entry storeEntriesInDefaults:entries];
+    Entry *entry = [[Entry alloc] initWithDictionary:@{titleKey: self.textField.text, textKey: self.textView.text}];
+    
+    if(self.entry) {
+        [[EntryController sharedInstance] replaceEntry:self.entry withEntry:entry];
+    } else {
+        [[EntryController sharedInstance] addEntry:entry];
+    }
     
     [self.navigationController popViewControllerAnimated:YES];
     
@@ -78,6 +78,13 @@
 -(void)updateWithDictionary:(NSDictionary *) dictionary {
     self.textField.text = dictionary[titleKey];
     self.textView.text = dictionary[textKey];
+}
+
+-(void) updateWithEntry:(Entry *)entry {
+    self.entry = entry;
+    self.textField.text = entry.title;
+    self.textView.text = entry.text;
+    
 }
 
 /*

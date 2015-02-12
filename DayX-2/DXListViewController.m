@@ -9,6 +9,7 @@
 #import "DXListViewController.h"
 #import "DXListTableViewDataSource.h"
 #import "DXDetailViewController.h"
+#import "EntryController.h"
 
 @interface DXListViewController () <UITableViewDelegate>
 
@@ -19,9 +20,15 @@
 
 @implementation DXListViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = @"Day X";
     
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
     self.dataSource = [DXListTableViewDataSource new];
@@ -48,6 +55,10 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    DXDetailViewController *dvc = [DXDetailViewController new];
+    [dvc updateWithEntry:[EntryController sharedInstance].entries[indexPath.row]];
+    [self.navigationController pushViewController:dvc animated:YES];
+    
 }
 
 

@@ -56,12 +56,14 @@ static NSString * const entryListKey = @"entryList";
     
 }
 -(void)replaceEntry:(NSDictionary *)oldEntry withEntry:(NSDictionary *)newEntry {
-    if (!oldEntry) {
+    if (!oldEntry || !newEntry) {
         return;
     }
     NSMutableArray *mutableArray = self.entries.mutableCopy;
-    NSInteger oldEntryIndex = [mutableArray indexOfObject:oldEntry];
-    [mutableArray replaceObjectAtIndex:oldEntryIndex withObject:newEntry];
+    if ([mutableArray containsObject:oldEntry]) {
+        NSInteger oldEntryIndex = [mutableArray indexOfObject:oldEntry];
+        [mutableArray replaceObjectAtIndex:oldEntryIndex withObject:newEntry];
+    }
     self.entries = mutableArray;
     [self synchronize];
 }
@@ -70,40 +72,21 @@ static NSString * const entryListKey = @"entryList";
 
 - (void)loadFromDefaults {
     NSArray *entryDictionaries = [[NSUserDefaults standardUserDefaults] objectForKey:entryListKey];
+    NSMutableArray *entries = [NSMutableArray new];
+    for (NSDictionary *entryDictionary in entryDictionaries) {
+        [entries addObject:[[Entry alloc] initWithDictionary:entryDictionary ]];
+    }
     self.entries = entryDictionaries;
 }
 
 - (void)synchronize {
+    NSMutableArray *entryDictionaries = [NSMutableArray new];
+    for (Entry *entry in self.entries) {
+        [entryDictionaries addObject:[entry entryDictionary]];
+    }
     [[NSUserDefaults standardUserDefaults] objectForKey:entryListKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
-
-
-
-////FROM DICTIONARY TO ARRAYS
-//+ (NSMutableArray *)loadFromDefaults {
-//    NSArray *entryDictionaries= [[NSUserDefaults standardUserDefaults] objectForKey:entriesKey];
-//    NSMutableArray *entries = [NSMutableArray new];
-//    for (NSDictionary *entryDictionary in entryDictionaries) {
-//        Entry *entry = [[Entry alloc] initWithDictionary:entryDictionary];
-//        [entries addObject:entry];
-//    }
-//    return entries;
-//}
-
-
-
-////entryDictionary converts to dictionary.. RETRIVING ARRAY TO DICTIONARY.
-////given entries how to turn it into dictionary.
-//+ (void)storeEntriesInDefaults:(NSArray *)entries {
-//    NSMutableArray *entryDictionaries = [NSMutableArray new];
-//    for (Entry *entry in entries) {
-//        //another way to write this:
-//        //NSDictionary *entryDictionary = [entry entryDictionary]
-//        //[entryDictionaries addObject:entryDictionary]
-//        [entryDictionaries addObject:[entry entryDictionary]];
-//    }
-//    [[NSUserDefaults standardUserDefaults] setObject:entryDictionaries forKey:entriesKey];
-//}
 
 
 
