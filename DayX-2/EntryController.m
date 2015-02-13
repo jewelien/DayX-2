@@ -34,7 +34,7 @@ static NSString * const entryListKey = @"entryList";
 
 -(void)addEntry:(Entry *)entry {
 
-    NSMutableArray *mutableArray = self.entries.mutableCopy;
+    NSMutableArray *mutableArray = [[NSMutableArray alloc] initWithArray: self.entries];
     if (!entry) {
         return;
     }
@@ -84,7 +84,7 @@ static NSString * const entryListKey = @"entryList";
     for (Entry *entry in self.entries) {
         [entryDictionaries addObject:[entry entryDictionary]];
     }
-    [[NSUserDefaults standardUserDefaults] objectForKey:entryListKey];
+    [[NSUserDefaults standardUserDefaults] setObject:entryDictionaries forKey: entryListKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 

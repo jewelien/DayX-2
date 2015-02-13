@@ -26,6 +26,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.view.backgroundColor = [UIColor orangeColor];
     
     self.textField = [[UITextField alloc] initWithFrame:CGRectMake(30, 100, 200, 40)];
 //    self.textField.backgroundColor = [UIColor grayColor];

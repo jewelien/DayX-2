@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FC6352031A8D58BB00041C1C /* PageViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6352021A8D58BB00041C1C /* PageViewDataSource.m */; };
+		FC6352061A8D61D200041C1C /* DetailContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6352051A8D61D200041C1C /* DetailContainerViewController.m */; };
 		FCBDA4961A8B06CD00E8D489 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FCBDA4951A8B06CD00E8D489 /* main.m */; };
 		FCBDA4991A8B06CD00E8D489 /* DXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FCBDA4981A8B06CD00E8D489 /* DXAppDelegate.m */; };
 		FCBDA49F1A8B06CD00E8D489 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCBDA49D1A8B06CD00E8D489 /* Main.storyboard */; };
@@ -34,6 +35,8 @@
 /* Begin PBXFileReference section */
 		FC6352011A8D58BB00041C1C /* PageViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewDataSource.h; sourceTree = "<group>"; };
 		FC6352021A8D58BB00041C1C /* PageViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewDataSource.m; sourceTree = "<group>"; };
+		FC6352041A8D61D200041C1C /* DetailContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailContainerViewController.h; sourceTree = "<group>"; };
+		FC6352051A8D61D200041C1C /* DetailContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailContainerViewController.m; sourceTree = "<group>"; };
 		FCBDA4901A8B06CD00E8D489 /* DayX-2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DayX-2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCBDA4941A8B06CD00E8D489 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCBDA4951A8B06CD00E8D489 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -104,6 +107,8 @@
 				FCBDA4BD1A8B088F00E8D489 /* DXListTableViewDataSource.m */,
 				FCBDA4C21A8B0C1700E8D489 /* DXDetailViewController.h */,
 				FCBDA4C31A8B0C1700E8D489 /* DXDetailViewController.m */,
+				FC6352041A8D61D200041C1C /* DetailContainerViewController.h */,
+				FC6352051A8D61D200041C1C /* DetailContainerViewController.m */,
 				FC6352011A8D58BB00041C1C /* PageViewDataSource.h */,
 				FC6352021A8D58BB00041C1C /* PageViewDataSource.m */,
 				FCBDA4C71A8B158300E8D489 /* Entry.h */,
@@ -251,6 +256,7 @@
 				FCBDA4BB1A8B077300E8D489 /* DXListViewController.m in Sources */,
 				FCBDA5681A8BFC1000E8D489 /* EntryController.m in Sources */,
 				FCBDA4991A8B06CD00E8D489 /* DXAppDelegate.m in Sources */,
+				FC6352061A8D61D200041C1C /* DetailContainerViewController.m in Sources */,
 				FCBDA4961A8B06CD00E8D489 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

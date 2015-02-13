@@ -18,6 +18,8 @@
     
     DXDetailViewController *detailViewController = [DXDetailViewController new];
     detailViewController.index = index;
+    
+    [detailViewController updateWithEntry:[EntryController sharedInstance].entries[index]];
     return detailViewController;
     
 }
