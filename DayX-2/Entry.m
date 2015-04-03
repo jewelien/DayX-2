@@ -8,9 +8,6 @@
 
 #import "Entry.h"
 
-static NSString * const entriesKey = @"entries";
-
-
 @implementation Entry
 
 //takes entry its called on and return dictionary. gives values and keys instead of objects.

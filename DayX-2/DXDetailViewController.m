@@ -62,7 +62,7 @@
     self.textView.text = @"";
 }
 
--(void)saveButtonAction:(id)sender {
+-(void)saveButtonAction:(UIBarButtonItem *)saveButton {
     
     Entry *entry = [[Entry alloc] initWithDictionary:@{titleKey: self.textField.text, textKey: self.textView.text}];
     
@@ -76,10 +76,10 @@
     
 }
 
--(void)updateWithDictionary:(NSDictionary *) dictionary {
-    self.textField.text = dictionary[titleKey];
-    self.textView.text = dictionary[textKey];
-}
+//-(void)updateWithDictionary:(NSDictionary *) dictionary {
+//    self.textField.text = dictionary[titleKey];
+//    self.textView.text = dictionary[textKey];
+//}
 
 -(void) updateWithEntry:(Entry *)entry {
     self.entry = entry;

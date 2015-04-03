@@ -13,8 +13,7 @@
 
 
 -(void)registerTableView:(UITableView *)tableView {
-//    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-//from solution branch???
+
     [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass([UITableViewCell class])];
 }
 
@@ -23,11 +22,13 @@
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    Entry *entry = [EntryController sharedInstance].entries[indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class])];
+    Entry *entry = [EntryController sharedInstance].entries[indexPath.row];
+    //    cell.textLabel.text = [entry title];
     cell.textLabel.text = entry.title;
     return cell;
 }
+
+
 
 @end

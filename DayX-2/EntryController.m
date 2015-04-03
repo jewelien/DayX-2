@@ -69,7 +69,7 @@ static NSString * const entryListKey = @"entryList";
 }
 
 
-
+//Retrieve dictionary/objects from NSUserDefaults, change to array.
 - (void)loadFromDefaults {
     NSArray *entryDictionaries = [[NSUserDefaults standardUserDefaults] objectForKey:entryListKey];
     NSMutableArray *entries = [NSMutableArray new];
@@ -79,10 +79,12 @@ static NSString * const entryListKey = @"entryList";
     self.entries = entryDictionaries;
 }
 
+
+//Add to NSUserDefaults dictionary. Creates an array. For each entry in entries array convert to dictionary then add to NSUserDefaults Dictionary..
 - (void)synchronize {
-    NSMutableArray *entryDictionaries = [NSMutableArray new];
-    for (Entry *entry in self.entries) {
-        [entryDictionaries addObject:[entry entryDictionary]];
+    NSMutableArray *entryDictionaries = [NSMutableArray new]; // creating a new array to hold the
+    for (Entry *entry in self.entries) { //for each array/index of entry in self.entries array..
+        [entryDictionaries addObject:[entry entryDictionary]];  //add it to entryDictionaries mutable array that we created right above. Entry that were adding to this array is being passed through "entryDictionary" method in Entry.m which converts each fieldkey (title, text) to dictionaryKey. 
     }
     [[NSUserDefaults standardUserDefaults] setObject:entryDictionaries forKey: entryListKey];
     [[NSUserDefaults standardUserDefaults] synchronize];

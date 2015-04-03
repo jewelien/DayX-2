@@ -9,15 +9,17 @@
 #import <UIKit/UIKit.h>
 @class Entry;
 
+//???
+static NSString * const EntryKey = @"entry";
 
 @interface DXDetailViewController : UIViewController
 
 
-@property (nonatomic, strong) NSDictionary *dictionary;
+//@property (nonatomic, strong) NSDictionary *dictionary;
 @property (nonatomic, assign) NSInteger index;
-
--(void)updateWithDictionary:(NSDictionary *) dictionary;
-
+//
+//-(void)updateWithDictionary:(NSDictionary *) dictionary;
+//
 -(void) updateWithEntry:(Entry *)entry;
 
 
